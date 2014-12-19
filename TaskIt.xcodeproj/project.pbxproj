@@ -13,6 +13,10 @@
 		E1A453491A449017007F6428 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1A453481A449017007F6428 /* Images.xcassets */; };
 		E1A4534C1A449017007F6428 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1A4534A1A449017007F6428 /* LaunchScreen.xib */; };
 		E1A453581A449017007F6428 /* TaskItTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A453571A449017007F6428 /* TaskItTests.swift */; };
+		E1A453621A44B89B007F6428 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A453611A44B89B007F6428 /* TaskCell.swift */; };
+		E1A453641A44BFA7007F6428 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A453631A44BFA7007F6428 /* Task.swift */; };
+		E1A453661A44C150007F6428 /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A453651A44C150007F6428 /* TaskDetailViewController.swift */; };
+		E1A453681A44C680007F6428 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A453671A44C680007F6428 /* Date.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +40,10 @@
 		E1A453511A449017007F6428 /* TaskItTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaskItTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1A453561A449017007F6428 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1A453571A449017007F6428 /* TaskItTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskItTests.swift; sourceTree = "<group>"; };
+		E1A453611A44B89B007F6428 /* TaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
+		E1A453631A44BFA7007F6428 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		E1A453651A44C150007F6428 /* TaskDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
+		E1A453671A44C680007F6428 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,10 +87,14 @@
 			children = (
 				E1A453411A449017007F6428 /* AppDelegate.swift */,
 				E1A453431A449017007F6428 /* ViewController.swift */,
+				E1A453651A44C150007F6428 /* TaskDetailViewController.swift */,
+				E1A453611A44B89B007F6428 /* TaskCell.swift */,
+				E1A453631A44BFA7007F6428 /* Task.swift */,
 				E1A453451A449017007F6428 /* Main.storyboard */,
 				E1A453481A449017007F6428 /* Images.xcassets */,
 				E1A4534A1A449017007F6428 /* LaunchScreen.xib */,
 				E1A4533F1A449017007F6428 /* Supporting Files */,
+				E1A453671A44C680007F6428 /* Date.swift */,
 			);
 			path = TaskIt;
 			sourceTree = "<group>";
@@ -212,8 +224,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1A453641A44BFA7007F6428 /* Task.swift in Sources */,
+				E1A453681A44C680007F6428 /* Date.swift in Sources */,
 				E1A453441A449017007F6428 /* ViewController.swift in Sources */,
+				E1A453621A44B89B007F6428 /* TaskCell.swift in Sources */,
 				E1A453421A449017007F6428 /* AppDelegate.swift in Sources */,
+				E1A453661A44C150007F6428 /* TaskDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
