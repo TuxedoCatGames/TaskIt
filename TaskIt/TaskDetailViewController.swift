@@ -10,6 +10,7 @@ import UIKit
 
 class TaskDetailViewController: UIViewController {
     
+    var mainVC: ViewController!
     var task:Task!
 
     @IBOutlet weak var taskTextField: UITextField!
@@ -30,4 +31,17 @@ class TaskDetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func cancelButtonPressed(sender: UIBarButtonItem) {
+        
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    @IBAction func doneButtonPressed(sender: UIBarButtonItem) {
+        
+        var updatedTask = Task(task: taskTextField.text, subtask: subtaskTextField.text, date: taskDatePicker.date, isCompleted:false)
+        
+        mainVC.baseArray[mainVC.tableView.indexPathForSelectedRow()!.section][mainVC.tableView.indexPathForSelectedRow()!.row] = updatedTask
+        
+        self.navigationController?.popViewControllerAnimated(true)
+    }
 }
