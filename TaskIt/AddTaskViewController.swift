@@ -7,10 +7,9 @@
 //
 
 import UIKit
+import CoreData
 
 class AddTaskViewController: UIViewController {
-
-    var mainVC: ViewController!
     
     @IBOutlet weak var taskTextField: UITextField!
     @IBOutlet weak var subtaskTextField: UITextField!
@@ -34,8 +33,26 @@ class AddTaskViewController: UIViewController {
 
     @IBAction func addTaskButtonPressed(sender: UIButton) {
         
-        var task = Task(task: taskTextField.text, subtask: subtaskTextField.text, date: datePicker.date, isCompleted:false)
-        mainVC.baseArray[0].append(task)
+        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        let context = appDelegate.managedObjectContext
+        let entityDescription = NSEntityDescription.entityForName("TaskModel", inManagedObjectContext: context!)
+        let task = TaskModel(entity: entityDescription!, insertIntoManagedObjectContext: context!)
+        
+        task.task = taskTextField.text
+        task.subtask = subtaskTextField.text
+        task.date = datePicker.date
+        task.completed = false
+        
+        appDelegate.saveContext()
+        
+        var request = NSFetchRequest(entityName: "TaskModel")
+        var error: NSError? = nil
+        var results: NSArray = context!.executeFetchRequest(request, error: &error)!
+        
+        for res in results {
+            println(res)
+        }
+        
         self.dismissViewControllerAnimated(true, completion: nil)
     }
 }
