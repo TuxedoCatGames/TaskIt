@@ -17,6 +17,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        if !NSUserDefaults.standardUserDefaults().boolForKey("loaded") {
+            
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "loaded")
+            NSUserDefaults.standardUserDefaults().setBool(false, forKey: "capitalize")
+            NSUserDefaults.standardUserDefaults().setBool(false, forKey: "complete")
+            
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+        
         return true
     }
 

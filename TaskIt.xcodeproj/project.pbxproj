@@ -20,6 +20,7 @@
 		E1A4536A1A48AD1B007F6428 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A453691A48AD1B007F6428 /* CoreData.framework */; };
 		E1A4539E1A48B0B0007F6428 /* TaskItModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E1A4539C1A48B0B0007F6428 /* TaskItModel.xcdatamodeld */; };
 		E1A453A01A48B192007F6428 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A4539F1A48B192007F6428 /* TaskModel.swift */; };
+		E1B8DDDE1A546D2A00FFE372 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B8DDDD1A546D2A00FFE372 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		E1A453691A48AD1B007F6428 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		E1A4539D1A48B0B0007F6428 /* TaskItModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TaskItModel.xcdatamodel; sourceTree = "<group>"; };
 		E1A4539F1A48B192007F6428 /* TaskModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
+		E1B8DDDD1A546D2A00FFE372 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				E1A453651A44C150007F6428 /* TaskDetailViewController.swift */,
 				E1A453611A44B89B007F6428 /* TaskCell.swift */,
 				C452D5EA1A470FC600495022 /* AddTaskViewController.swift */,
+				E1B8DDDD1A546D2A00FFE372 /* SettingsViewController.swift */,
 				E1A453451A449017007F6428 /* Main.storyboard */,
 				E1A453481A449017007F6428 /* Images.xcassets */,
 				E1A4534A1A449017007F6428 /* LaunchScreen.xib */,
@@ -242,6 +245,7 @@
 				E1A453661A44C150007F6428 /* TaskDetailViewController.swift in Sources */,
 				E1A453A01A48B192007F6428 /* TaskModel.swift in Sources */,
 				C452D5EB1A470FC600495022 /* AddTaskViewController.swift in Sources */,
+				E1B8DDDE1A546D2A00FFE372 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
