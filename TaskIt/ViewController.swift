@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate, TaskDetailViewControllerDelegate, AddTaskViewControllerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -19,6 +19,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Background")!)
         
         fetchedResultsController = NSFetchedResultsController(fetchRequest: taskFetchRequest(), managedObjectContext: context, sectionNameKeyPath: "completed", cacheName: nil)
         fetchedResultsController.delegate = self
@@ -95,6 +97,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        cell.backgroundColor = UIColor.clearColor()
+    }
+    
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         
         var task = fetchedResultsController.objectAtIndexPath(indexPath) as TaskModel
@@ -111,10 +117,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             let indexPath = self.tableView.indexPathForSelectedRow()
             
             vc.task = fetchedResultsController.objectAtIndexPath(indexPath!) as TaskModel
+            vc.delegate = self
             
         } else if segue.identifier == "showAddTask" {
             
             let vc = segue.destinationViewController as AddTaskViewController
+            vc.delegate = self
         }
     }
     
@@ -141,5 +149,30 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.reloadData()
     }
     
+    // MARK: - Task Detail Delegate
+    
+    func taskDetailEdited() {
+        
+        showAlert()
+    }
+    
+    // MARK: - Add Task Delegate
+    
+    func addTaskCancelled(message: String) {
+        
+        showAlert(message: message)
+    }
+    
+    func addTask(message: String) {
+        
+        showAlert(message: message)
+    }
+    
+    func showAlert(message: String = "Congratulations") {
+        
+        var alert = UIAlertController(title: "Change Made", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
 }
 

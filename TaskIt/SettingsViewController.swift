@@ -18,6 +18,8 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Background")!)
+        
         capitalizeTableView.delegate = self
         capitalizeTableView.dataSource = self
         capitalizeTableView.scrollEnabled = false

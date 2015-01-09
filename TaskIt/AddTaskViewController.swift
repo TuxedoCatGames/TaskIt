@@ -9,16 +9,25 @@
 import UIKit
 import CoreData
 
+protocol AddTaskViewControllerDelegate {
+    
+    func addTask(message: String)
+    func addTaskCancelled(message: String)
+}
+
 class AddTaskViewController: UIViewController {
     
     @IBOutlet weak var taskTextField: UITextField!
     @IBOutlet weak var subtaskTextField: UITextField!
     @IBOutlet weak var datePicker: UIDatePicker!
     
+    var delegate: AddTaskViewControllerDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Background")!)
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,6 +38,7 @@ class AddTaskViewController: UIViewController {
     @IBAction func cancelButtonPressed(sender: UIButton) {
         
         self.dismissViewControllerAnimated(true, completion: nil)
+        delegate?.addTaskCancelled("Task Not Added")
     }
 
     @IBAction func addTaskButtonPressed(sender: UIButton) {
@@ -60,5 +70,6 @@ class AddTaskViewController: UIViewController {
         }
         
         self.dismissViewControllerAnimated(true, completion: nil)
+        delegate?.addTask("Task Added")
     }
 }
